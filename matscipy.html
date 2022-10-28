@@ -490,6 +490,8 @@ This is faster than calling numpy.linalg.inv for each matrix.</p>
 <dd><p>Calculate deformation gradient tensor and D^2_min measure for non-affine
 displacements.
 See: Falk, Langer, Phys. Rev. B 57, 7192 (1998)</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
 <dl class="simple">
 <dt>atoms_now<span class="classifier">ase.Atoms</span></dt><dd><p>Current atomic configuration</p>
 </dd>
@@ -500,12 +502,16 @@ See: Falk, Langer, Phys. Rev. B 57, 7192 (1998)</p>
 <dt>neighbours<span class="classifier">( array_like, array_like )</span></dt><dd><p>Neighbor list. Automatically computed if not provided.</p>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
 <dl class="simple">
 <dt>delta_plus_epsilon<span class="classifier">array</span></dt><dd><p>3x3 deformation gradient tensor for each atom.</p>
 </dd>
 <dt>residual<span class="classifier">array</span></dt><dd><p>D^2_min norm for each atom</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py function">

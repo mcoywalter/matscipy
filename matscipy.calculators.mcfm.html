@@ -206,21 +206,35 @@ are returned. In case some atoms are flagged for QM treatment
 each Qm cluster is independently send to a qmmm potential to evaluate
 more accurate forces. The results of qmmm evaluations are used to modify
 the classical forces and the final array is given</p>
+<section id="results-are">
+<h3>results are<a class="headerlink" href="#results-are" title="Permalink to this heading"></a></h3>
 <p>energy = potential energy from classical evaluation
 potential energies = pot energy per atom from classical evaluation
 forces = classical or qmmm forces depending on whether any atoms are flagged</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>atoms</strong> (<em>ASE.atoms</em>) – atoms object</p></li>
-<li><p><strong>properties</strong> (<em>list</em>) – properties ot evaluate</p></li>
-<li><p><strong>system_changes</strong> (<em>TYPE</em>) – changes in the system</p></li>
-</ul>
+<dt class="field-odd">param atoms</dt>
+<dd class="field-odd"><p>atoms object</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>AttributeError</strong> – Must provide an atoms object</p>
+<dt class="field-even">type atoms</dt>
+<dd class="field-even"><p>ASE.atoms</p>
+</dd>
+<dt class="field-odd">param properties</dt>
+<dd class="field-odd"><p>properties ot evaluate</p>
+</dd>
+<dt class="field-even">type properties</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">param system_changes</dt>
+<dd class="field-odd"><p>changes in the system</p>
+</dd>
+<dt class="field-even">type system_changes</dt>
+<dd class="field-even"><p>TYPE</p>
+</dd>
+<dt class="field-odd">raises AttributeError</dt>
+<dd class="field-odd"><p>Must provide an atoms object</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py method">
@@ -249,6 +263,8 @@ forces = classical or qmmm forces depending on whether any atoms are flagged</p>
 <span class="sig-name descname"><span class="pre">compute_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forces</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matscipy.calculators.mcfm.calculator.MultiClusterForceMixingPotential.compute_stress" title="Permalink to this definition"></a></dt>
 <dd><p>Compute total stresses using viral theorem.
 WARNING: only works for non-PBC structures</p>
+<section id="the-formula-for-stress-evaluation-is">
+<h3>the formula for stress evaluation is<a class="headerlink" href="#the-formula-for-stress-evaluation-is" title="Permalink to this heading"></a></h3>
 <p>Sij = sum_k (m_k v_ik v_jk)/ volume + sum_k (r_ik f_jk)/volume
 m: mass
 v: velocity
@@ -257,19 +273,26 @@ f: force
 where i,j are taken from {x, y, z}
 and sum_k represents a sum over all atoms</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>atoms</strong> (<em>ASE.atoms</em>) – atoms object</p></li>
-<li><p><strong>forces</strong> (<em>np.array</em>) – atomic forces</p></li>
-</ul>
+<dt class="field-odd">param atoms</dt>
+<dd class="field-odd"><p>atoms object</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>stress</strong> – stress tensof in matrix notation</p>
+<dt class="field-even">type atoms</dt>
+<dd class="field-even"><p>ASE.atoms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.array</p>
+<dt class="field-odd">param forces</dt>
+<dd class="field-odd"><p>atomic forces</p>
+</dd>
+<dt class="field-even">type forces</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>stress</strong> – stress tensof in matrix notation</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>np.array</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py method">
@@ -326,19 +349,28 @@ core qm list</p>
 <span class="sig-name descname"><span class="pre">print_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matscipy.calculators.mcfm.calculator.MultiClusterForceMixingPotential.print_message" title="Permalink to this definition"></a></dt>
 <dd><p>Print a message if the calculators verbosity level is above the
 given threshold</p>
+<section id="for-now-verbose-levels-are">
+<h3>For now verbose levels are<a class="headerlink" href="#for-now-verbose-levels-are" title="Permalink to this heading"></a></h3>
 <p>0 - nothing is printed
 1 - Message when meth::calculate is called
 10 - Calculate steps are listed
 100 - Information about specific QM clusters
 (the default is 0)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>message</strong> (<em>str</em>) – The message to be printed</p></li>
-<li><p><strong>limit</strong> (<em>int</em>) – the verbosity threshold for this mesage</p></li>
-</ul>
+<dt class="field-odd">param message</dt>
+<dd class="field-odd"><p>The message to be printed</p>
+</dd>
+<dt class="field-even">type message</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param limit</dt>
+<dd class="field-odd"><p>the verbosity threshold for this mesage</p>
+</dd>
+<dt class="field-even">type limit</dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py method">
@@ -451,6 +483,8 @@ throughout the run</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">matscipy.calculators.mcfm.qm_cluster.</span></span><span class="sig-name descname"><span class="pre">QMCluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">special_atoms_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#matscipy.calculators.mcfm.qm_cluster.QMCluster" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This is a class responsible for managing the QM clusters in the simulation.</p>
+<section id="it-acts-as-a-mediator-between">
+<h3>It acts as a mediator between<a class="headerlink" href="#it-acts-as-a-mediator-between" title="Permalink to this heading"></a></h3>
 <blockquote>
 <div><p>QM flagginig module
 QM clustering module
@@ -552,6 +586,7 @@ potential_energies=None,
 </div></blockquote>
 </dd></dl>
 
+</section>
 </dd></dl>
 
 </section>
